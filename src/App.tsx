@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useCalculatorController } from "./controllers/useCalculatorController";
-import Display from "./components/Display";
-import Keypad from "./components/Keypad";
+import Display from "./components/calculator/Display";
+import Keypad from "./components/calculator/Keypad";
 import History from "./components/History";
-import ResetPassword from "./components/user/ResetPassword";
-import UserProfile from "./components/user/UserProfile";
-import AuthPage from "./components/user/AuthPage";
+import ResetPassword from "./components/auth/ResetPassword";
+import AuthPage from "./components/auth/AuthPage";
+import UserProfile from "./components/profile/UserProfile";
+import ProfileModal from "./components/profile/ProfileModal";
 import useKeyboard from "./hooks/useKeyboard";
-import ProfileModal from "./components/ProfileModal";
 import { getUser, logoutUser, deleteUser } from "./services/authService";
 import {
     ProfileModalProps,

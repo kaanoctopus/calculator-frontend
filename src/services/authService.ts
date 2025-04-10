@@ -1,6 +1,11 @@
-import { fetchWithFallback } from "../utility/apiClient";
+import { fetchWithFallback } from "../utils/apiClient";
 
-export async function registerUser(firstName: string, lastName: string, email: string, password: string) {
+export async function registerUser(
+    firstName: string,
+    lastName: string,
+    email: string,
+    password: string
+) {
     return await fetchWithFallback(
         "/register",
         {

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import {KeypadProps} from "../types";
+import {KeypadProps} from "../../types";
 
 const NUMBER_COLOR = "bg-white";
 const OPERATOR_COLOR = "bg-gray-200";

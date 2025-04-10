@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { updateUser } from "../services/authService";
-import { ProfileModalProps, FormData } from "../types";
+import { updateUser } from "../../services/authService";
+import { ProfileModalProps, FormData } from "../../types";
 
 const ProfileModal: React.FC<ProfileModalProps> = ({ user, onClose, onUpdate }) => {
     const [formData, setFormData] = useState<FormData>({

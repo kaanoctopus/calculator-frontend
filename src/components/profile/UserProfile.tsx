@@ -84,21 +84,21 @@ export default function UserProfile({
                     <div className="space-y-2">
                         <div className="flex items-center border-b border-gray-100 pb-3">
                             <span className="w-[80px] font-medium text-gray-500 flex items-center gap-1">
-                                {/* <FaUser className="text-sm" /> Name */}
+                                {/* <FaUser className="text-sm" /> Name */}Name
                             </span>
                             <span className="flex-1 text-gray-800">{profileData.firstName}</span>
                         </div>
                         
                         <div className="flex items-center border-b border-gray-100 pb-3">
                             <span className="w-[80px] font-medium text-gray-500 flex items-center gap-1">
-                                {/* <FaUser className="text-sm" /> Surname */}
+                                {/* <FaUser className="text-sm" /> Surname */}Surname
                             </span>
                             <span className="flex-1 text-gray-800">{profileData.lastName}</span>
                         </div>
                         
                         <div className="flex items-center">
                             <span className="w-[80px] font-medium text-gray-500 flex items-center gap-1">
-                                {/* <FaEnvelope className="text-sm" /> Email */}
+                                {/* <FaEnvelope className="text-sm" /> Email */}Email
                             </span>
                             <span className="flex-1 text-blue-600">{profileData.email}</span>
                         </div>

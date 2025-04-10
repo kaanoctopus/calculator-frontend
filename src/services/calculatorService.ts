@@ -1,4 +1,4 @@
-import { fetchWithFallback, getAuthHeaders } from "../utility/apiClient";
+import { fetchWithFallback, getAuthHeaders } from "../utils/apiClient";
 
 export async function evaluateExpression(expression: string): Promise<string> {
     const data = await fetchWithFallback("/calculate", {
