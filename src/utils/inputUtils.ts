@@ -70,6 +70,7 @@ export const transformForEvaluation = (expr: string): string => {
     return result;
 };
 
+// co"s(", si"n("
 const isFunctionCall = (expr: string, i: number): boolean => {
     return (expr[i] === "s" || expr[i] === "n") && expr[i + 1] === "(";
 };
