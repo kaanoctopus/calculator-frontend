@@ -30,6 +30,27 @@ export const transformSpecialInput = (key: string): string => {
     return transformations[key] || key;
 };
 
+// This function takes a mathematical expression as a string and transforms it into a format suitable for evaluation.
+// It iterates through the expression character by character, checking if the current character represents a function call (e.g., sin, cos).
+// If a function call is detected, it extracts the inner expression within the parentheses, recursively transforms it, and appends it to the result.
+// Otherwise, it appends the current character to the result as is.
+// The function ensures that nested function calls are properly handled and transformed.
+// Step-by-step example:
+// 1. Input: "sin(cos(90) * 2)"
+//    - The function starts iterating through the string.
+// 2. Detects "sin(":
+//    - Recognizes it as a function call.
+//    - Extracts the inner expression "cos(90) * 2".
+// 3. Processes "cos(90)":
+//    - Recognizes "cos(" as a function call.
+//    - Extracts the inner expression "90".
+//    - Recursively transforms "90" (no further transformation needed).
+//    - Appends "cos(90 deg)" to the result.
+// 4. Multiplies by 2:
+//    - Appends " * 2" to the result.
+// 5. Completes "sin(":
+//    - Wraps the transformed inner expression "cos(90 deg) * 2" with "sin(" and adds its own deg.
+// 6. Final Output: "sin(cos(90 deg) * 2 deg)"
 export const transformForEvaluation = (expr: string): string => {
     let result = "";
     let i = 0;
