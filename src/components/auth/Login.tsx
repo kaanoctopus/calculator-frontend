@@ -6,7 +6,10 @@ import { LoginProps, LoginErrors } from "../../types";
 export default function Login({ onLogin, onSwitchToRegister }: LoginProps) {
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
-    const [errors, setErrors] = useState<LoginErrors>({ email: "", password: "" });
+    const [errors, setErrors] = useState<LoginErrors>({
+        email: "",
+        password: "",
+    });
     const [showModal, setShowModal] = useState<boolean>(false);
     const [loading, setLoading] = useState<boolean>(false);
     const [resetEmail, setResetEmail] = useState<string>("");
@@ -23,7 +26,9 @@ export default function Login({ onLogin, onSwitchToRegister }: LoginProps) {
         }
     }, [errorMessage]);
 
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
+    const handleSubmit = async (
+        e: React.FormEvent<HTMLFormElement>
+    ): Promise<void> => {
         e.preventDefault();
         setErrorMessage("");
         const newErrors: Partial<LoginErrors> = {};
@@ -65,7 +70,9 @@ export default function Login({ onLogin, onSwitchToRegister }: LoginProps) {
         }
     };
 
-    const handlePasswordReset = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
+    const handlePasswordReset = async (
+        e: React.FormEvent<HTMLFormElement>
+    ): Promise<void> => {
         e.preventDefault();
         setResetSuccess("");
         try {

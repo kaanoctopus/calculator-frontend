@@ -1,12 +1,5 @@
 import { motion } from "framer-motion";
-// import { 
-//   FaUser, 
-//   FaEdit, 
-//   FaSignOutAlt, 
-//   FaTrash,
-//   FaIdCard,
-//   FaEnvelope
-// } from "react-icons/fa";
+import { User, Edit, LogOut, Trash, IdCard, Mail } from "lucide-react";
 import { UserProfileProps } from "../../types";
 
 export default function UserProfile({
@@ -34,7 +27,7 @@ export default function UserProfile({
                     className="w-full flex items-center justify-center gap-2 p-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors"
                     onClick={onGetProfile}
                 >
-                    {/* <FaUser /> */}
+                    <User size={18} />
                     View Profile
                 </motion.button>
 
@@ -44,7 +37,7 @@ export default function UserProfile({
                     className="w-full flex items-center justify-center gap-2 p-2 bg-green-500 hover:bg-green-600 text-white rounded-lg transition-colors"
                     onClick={onUpdateProfile}
                 >
-                    {/* <FaEdit /> */}
+                    <Edit size={18} />
                     Update Profile
                 </motion.button>
 
@@ -54,7 +47,7 @@ export default function UserProfile({
                     className="w-full flex items-center justify-center gap-2 p-2 bg-yellow-500 hover:bg-yellow-600 text-white rounded-lg transition-colors"
                     onClick={onLogout}
                 >
-                    {/* <FaSignOutAlt /> */}
+                    <LogOut size={18} />
                     Logout
                 </motion.button>
 
@@ -64,7 +57,7 @@ export default function UserProfile({
                     className="w-full flex items-center justify-center gap-2 p-2 bg-red-500 hover:bg-red-600 text-white rounded-lg transition-colors"
                     onClick={onDeleteAccount}
                 >
-                    {/* <FaTrash /> */}
+                    <Trash size={18} />
                     Delete Account
                 </motion.button>
             </div>
@@ -77,35 +70,44 @@ export default function UserProfile({
                     className="p-5 bg-gradient-to-br from-white to-gray-50 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow"
                 >
                     <div className="flex items-center gap-2 mb-4">
-                        {/* <FaIdCard className="text-blue-500" /> */}
-                        <h3 className="text-lg font-semibold text-gray-800">Profile Details</h3>
+                        <IdCard className="text-blue-500" size={18} />
+                        <h3 className="text-lg font-semibold text-gray-800">
+                            Profile Details
+                        </h3>
                     </div>
-                    
+
                     <div className="space-y-2">
                         <div className="flex items-center border-b border-gray-100 pb-3">
-                            <span className="w-[80px] font-medium text-gray-500 flex items-center gap-1">
-                                {/* <FaUser className="text-sm" /> Name */}Name
+                            <span className="w-[90px] font-medium text-gray-500 flex items-center gap-1">
+                                <User size={14} /> Name
                             </span>
-                            <span className="flex-1 text-gray-800">{profileData.firstName}</span>
+                            <span className="flex-1 text-gray-800">
+                                {profileData.firstName}
+                            </span>
                         </div>
-                        
+
                         <div className="flex items-center border-b border-gray-100 pb-3">
-                            <span className="w-[80px] font-medium text-gray-500 flex items-center gap-1">
-                                {/* <FaUser className="text-sm" /> Surname */}Surname
+                            <span className="w-[90px] font-medium text-gray-500 flex items-center gap-1">
+                                <User size={14} /> Surname
                             </span>
-                            <span className="flex-1 text-gray-800">{profileData.lastName}</span>
+                            <span className="flex-1 text-gray-800">
+                                {profileData.lastName}
+                            </span>
                         </div>
-                        
+
                         <div className="flex items-center">
-                            <span className="w-[80px] font-medium text-gray-500 flex items-center gap-1">
-                                {/* <FaEnvelope className="text-sm" /> Email */}Email
+                            <span className="w-[90px] font-medium text-gray-500 flex items-center gap-1">
+                                <Mail size={14} /> Email
                             </span>
-                            <span className="flex-1 text-blue-600">{profileData.email}</span>
+                            <span className="flex-1 text-blue-600">
+                                {profileData.email}
+                            </span>
                         </div>
                     </div>
                 </motion.div>
-            ) : (<div></div>)
-            }
+            ) : (
+                <div></div>
+            )}
         </motion.div>
     );
 }

@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { AnimationState, Transition, HistoryProps } from "../types";
 
-
-
 export default function History({ items, onClear }: HistoryProps) {
     const [height, setHeight] = useState<string>("500px");
     for (let i = 0; i < items.length; ++i) {
@@ -11,7 +9,8 @@ export default function History({ items, onClear }: HistoryProps) {
     }
     useEffect(() => {
         const updateHeight = (): void => {
-            const calculator = document.querySelector<HTMLDivElement>("#calculator");
+            const calculator =
+                document.querySelector<HTMLDivElement>("#calculator");
             if (calculator) {
                 setHeight(`${calculator.clientHeight}px`);
             }
@@ -60,12 +59,18 @@ export default function History({ items, onClear }: HistoryProps) {
                             {items.map((item, index) => (
                                 <motion.li
                                     key={items.length - index - 1}
-                                    initial={{ opacity: 0, x: -10 } as AnimationState}
-                                    animate={{ opacity: 1, x: 0 } as AnimationState}
-                                    transition={{
-                                        duration: 0.3,
-                                        delay: index * 0.05,
-                                    } as Transition}
+                                    initial={
+                                        { opacity: 0, x: -10 } as AnimationState
+                                    }
+                                    animate={
+                                        { opacity: 1, x: 0 } as AnimationState
+                                    }
+                                    transition={
+                                        {
+                                            duration: 0.3,
+                                            delay: index * 0.05,
+                                        } as Transition
+                                    }
                                     className="px-3 py-2 bg-gray-50 rounded-lg text-gray-700 font-mono text-sm truncate"
                                 >
                                     {item}

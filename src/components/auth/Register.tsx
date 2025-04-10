@@ -71,7 +71,9 @@ export default function Register({ onSwitchToLogin }: RegisterProps) {
         }
     };
 
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
+    const handleSubmit = async (
+        e: React.FormEvent<HTMLFormElement>
+    ): Promise<void> => {
         e.preventDefault();
 
         if (!validateForm()) return;

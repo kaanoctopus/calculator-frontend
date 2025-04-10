@@ -2,8 +2,10 @@ import { useState } from "react";
 import { resetPassword } from "../../services/authService";
 import { ResetPasswordProps } from "../../types";
 
-
-export default function ResetPassword({ token, onSuccess }: ResetPasswordProps) {
+export default function ResetPassword({
+    token,
+    onSuccess,
+}: ResetPasswordProps) {
     const [newPassword, setNewPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [error, setError] = useState("");

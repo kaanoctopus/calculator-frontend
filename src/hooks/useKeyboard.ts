@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { HandleKeyPress, KeyboardEventHandler } from "../types";
 
-
 export default function useKeyboard(handleKeyPress: HandleKeyPress): void {
     useEffect(() => {
         const handleKeyDown: KeyboardEventHandler = (e) => {

@@ -4,9 +4,10 @@ import Login from "./Login";
 import Register from "./Register";
 import { AuthPageProps } from "../../types";
 
-
 export default function AuthPage({ onLogin }: AuthPageProps) {
-    const [currentPage, setCurrentPage] = useState<"login" | "register">("login");
+    const [currentPage, setCurrentPage] = useState<"login" | "register">(
+        "login"
+    );
 
     const switchToLogin = (): void => setCurrentPage("login");
     const switchToRegister = (): void => setCurrentPage("register");

@@ -1,5 +1,7 @@
-const BACKUP_API_BASE: string = "https://splendorous-pasca-035b17.netlify.app/api";
-const PRIMARY_API_BASE: string = "https://splendorous-pasca-035b17.netlify.app/api";
+const BACKUP_API_BASE: string =
+    "https://splendorous-pasca-035b17.netlify.app/api";
+const PRIMARY_API_BASE: string =
+    "https://splendorous-pasca-035b17.netlify.app/api";
 const AUTH_ENDPOINT: string = "/auth";
 const FAILOVER_DURATION: number = 5 * 60 * 1000; // 5 minutes in milliseconds
 
@@ -39,7 +41,8 @@ export async function fetchWithFallback(
 
     const now: number = Date.now();
     const isInFailover: boolean =
-        primaryAPIFailedAt !== null && now - primaryAPIFailedAt < FAILOVER_DURATION;
+        primaryAPIFailedAt !== null &&
+        now - primaryAPIFailedAt < FAILOVER_DURATION;
 
     if (!isInFailover) {
         try {
@@ -58,9 +61,14 @@ export async function fetchWithFallback(
         }
     } else {
         console.log(
-            `In failover mode (${primaryAPIFailedAt !== null ? Math.round(
-                (FAILOVER_DURATION - (now - primaryAPIFailedAt)) / 1000
-            ) : 0}s remaining)`
+            `In failover mode (${
+                primaryAPIFailedAt !== null
+                    ? Math.round(
+                          (FAILOVER_DURATION - (now - primaryAPIFailedAt)) /
+                              1000
+                      )
+                    : 0
+            }s remaining)`
         );
     }
 

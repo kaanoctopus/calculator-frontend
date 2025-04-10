@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import {KeypadProps} from "../../types";
+import { KeypadProps } from "../../types";
 
 const NUMBER_COLOR = "bg-white";
 const OPERATOR_COLOR = "bg-gray-200";
@@ -8,16 +8,14 @@ const SCIENCE_OPERATOR_COLOR = "bg-gray-500 text-white";
 const RESET_COLOR = "bg-red-500 text-white";
 const RESULT_COLOR = "bg-blue-500 text-white";
 
-
-
 export default function Keypad({ onKeyPress }: KeypadProps) {
     const [disableAnimations, setDisableAnimations] = useState(false);
 
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent): void => {
             if (e.key === "Enter") {
-            setDisableAnimations(true);
-            setTimeout(() => setDisableAnimations(false), 100);
+                setDisableAnimations(true);
+                setTimeout(() => setDisableAnimations(false), 100);
             }
         };
 

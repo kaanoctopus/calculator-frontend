@@ -11,4 +11,4 @@ export type CalculatorInterfaceProps = {
     onGetProfile: () => void;
     onDeleteAccount: () => void;
     onUpdateProfile: () => void;
-}
+};

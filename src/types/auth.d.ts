@@ -36,4 +36,4 @@ export type LoginErrors = {
 export type ResetPasswordProps = {
     token: string;
     onSuccess: () => void;
-}
+};

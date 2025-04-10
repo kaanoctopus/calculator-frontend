@@ -3,7 +3,6 @@ import "@testing-library/jest-dom";
 import App from "../App";
 import { useCalculatorController } from "../controllers/useCalculatorController";
 
-
 jest.mock("../controllers/useCalculatorController");
 
 const mockUseCalculatorController =

@@ -2,7 +2,11 @@ import React, { useState, useEffect } from "react";
 import { updateUser } from "../../services/authService";
 import { ProfileModalProps, FormData } from "../../types";
 
-const ProfileModal: React.FC<ProfileModalProps> = ({ user, onClose, onUpdate }) => {
+const ProfileModal: React.FC<ProfileModalProps> = ({
+    user,
+    onClose,
+    onUpdate,
+}) => {
     const [formData, setFormData] = useState<FormData>({
         firstName: user.firstName || "",
         lastName: user.lastName || "",
@@ -20,7 +24,9 @@ const ProfileModal: React.FC<ProfileModalProps> = ({ user, onClose, onUpdate }) 
         setFormData((prevData) => ({ ...prevData, [name]: value }));
     };
 
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
+    const handleSubmit = async (
+        e: React.FormEvent<HTMLFormElement>
+    ): Promise<void> => {
         e.preventDefault();
         try {
             const updatedUser = await updateUser(formData);
